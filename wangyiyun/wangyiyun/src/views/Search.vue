@@ -63,7 +63,6 @@ export default {
     },
     mounted() {
         this.keyWordList = JSON.parse(localStorage.getItem('keyWordList')) || [];
-        this.getMusicComments();
     },
     methods: {
         enterKey: async function () {
@@ -97,25 +96,9 @@ export default {
             item.al.picUrl = item.album.artist.img1v1Url
             this.$store.commit("pushPlayList", item)
             this.$store.commit("updatePlayListIndex", this.$store.state.playList.length - 1)
-            this.updatePlayList(this.itemList)
-            this.updatePlayListIndex(item)
+          
         },
         ...mapMutations(['updatePlayList','updatePlayListIndex']),
-        getMusicComments() {
-            const musicId = this.$store.state.playList[0].id;
-            const limit = 20;
-            const offset = 0;
-            const before = null;
-
-            getMusicComments(musicId, limit, offset, before)
-                .then(response => {
-                    this.comments = response.data.comments;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-
-        },
 
     },
 };

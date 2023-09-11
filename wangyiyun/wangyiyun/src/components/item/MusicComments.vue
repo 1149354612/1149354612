@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState ,mapMutations} from "vuex";
 import { getMusicComments } from "@/request/api/home.js";
 
 export default {
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getMusicComments() {
-      const musicId = this.$store.state.playList[0].id; // 从state.playList获取id属性
+      const musicId = this. $store. state. playList [this. $store. state.playListIndex].id; // 从state.playList获取id属性
       const limit = 20;
       const offset = 0;
       const before = null;
@@ -46,7 +46,8 @@ export default {
         .catch(error => {
           console.error(error);
         });
-    }
+    },
+    ...mapMutations(['updatePlayList','updatePlayListIndex'])
   }
 };
 </script>
