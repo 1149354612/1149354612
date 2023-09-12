@@ -65,7 +65,11 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   if (to.path == '/login') {
     store.state.isFooterMusic = false
-  } else {
+  }
+  if (to.path == '/comments'){
+    store.state.isFooterMusic = false
+  } 
+  else {
     store.state.isFooterMusic = true
   }
 })

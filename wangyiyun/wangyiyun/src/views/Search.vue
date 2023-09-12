@@ -42,9 +42,8 @@
 </template>
 
 <script>
-import { getSearchMusic, getMusicComments } from "@/request/api/home.js";
-import { mapState } from "vuex";
-import { mapMutations } from 'vuex';
+import { getSearchMusic} from "@/request/api/home.js";
+import { mapState ,mapMutations} from "vuex";
 export default {
     setup(props) {
         // console.log(props);
@@ -94,7 +93,7 @@ export default {
 
             item.al = item.album
             item.al.picUrl = item.album.artist.img1v1Url
-            this.$store.commit("pushPlayList", item)
+            this.$store.commit("pushPlayList",item)
             this.$store.commit("updatePlayListIndex", this.$store.state.playList.length - 1)
           
         },

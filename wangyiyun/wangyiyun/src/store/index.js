@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import { getMusicLyric } from "@/request/api/item.js"
-import { checkQRCodeStatus,generateQRCodeKey,generateQRCode, sendCaptcha,verifyCaptcha, getMusicContent} from "@/request/api/home.js"
+import { checkQRCodeStatus,generateQRCodeKey,generateQRCode, sendCaptcha,verifyCaptcha, getMusicComments} from "@/request/api/home.js"
 
 export default createStore({
   state: {

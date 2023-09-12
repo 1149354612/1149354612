@@ -3,7 +3,6 @@
     <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
       <use xlink:href="#icon-zuojiantou"></use>
     </svg>
-
     <div>
       <h1 class="title">评论页面</h1>
       <ul class="comments">
@@ -12,6 +11,10 @@
           <p class="time">{{ comment.time }}</p>
         </li>
       </ul>
+    </div>
+    <div class="leavecomments">
+      <input type="text" placeholder="留下你想说的话吧" class="input">
+      <button>发送</button>
     </div>
   </div>
 </template>
@@ -76,8 +79,6 @@ export default {
       .content {
         font-size: 16px;
         line-height: 1.5;
-
-        /* 可以根据实际需求设置限制行数 */
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -91,5 +92,42 @@ export default {
         margin-top: 10px;
       }
     }
+    
+    
+  }
+  .leavecomments{
+  display: absolute;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  .input{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    height: 30px;
+    width: 80%;
+    font-size: 16px;
+    border:1px,solid;
+    border-radius: 15px;
+    background-color: #f6f6f6;
+  }
+  button{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    line-height: 40px;
+    right: 10px;
+    border: none;
+    font-size: 18px;
+    color: #b5afaf;
+    background-color: #ffffff;
+  }
   }
 </style>
