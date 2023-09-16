@@ -53,7 +53,7 @@ export default createStore({
     updateDuration: function (state, value) {
       state.duration = value
     },
-    updateIsLogin: function (state, value) {
+    updateIsLogin: function (state) {
       state.isLogin = true
     },
     updateToken: function (state, value) {
@@ -69,30 +69,30 @@ export default createStore({
       let res = await getMusicLyric(value)
       context.commit("updateLyricList", res.data.lrc)
     },
-    getLogin: async function (context, value) {
+    getLogin: async function (value) {
       let res = await getPhoneLogin(value);
        console.log(res);
       return res
     },
-    sendCaptcha: async function(context,value) {
+    sendCaptcha: async function(value) {
       let res=await sendCaptcha(value);
       console.log(res);
       return res
     },
-    verifyCaptcha: async function(context,value) {
+    verifyCaptcha: async function(value) {
       let res=await verifyCaptcha(value);
       console.log(res);
       return res
     },
-    generateQRCodeKey: async function(context,value) {
+    generateQRCodeKey: async function(value) {
       let res=await generateQRCodeKey(value);
       return res;
     },
-    generateQRCode: async function(context,value) {
+    generateQRCode: async function(value) {
       let res=await generateQRCode(value);
       return res;
     },
-    checkQRCodeStatus: async function(context,value) {
+    checkQRCodeStatus: async function(value) {
       let res=await checkQRCodeStatus(value);
       return res;
     },

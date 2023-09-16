@@ -96,7 +96,7 @@ export default {
         height: 40%;
         position: fixed;
         top: 0;
-        z-index: -1;
+        z-index: -100;
         filter: blur(.4rem);
     }
     .itemLeft {
@@ -156,7 +156,7 @@ export default {
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
-        color: #fff;
+        color: #d4c8c8;
         position: absolute;
         top: -120px;
         right: 15px;

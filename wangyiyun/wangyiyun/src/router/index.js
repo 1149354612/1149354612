@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import store from '@/store/index'
+import store from '@/store/index.js'
 const routes = [
   {
     path: '/',
@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/infoUser',
     name: 'InfoUser',
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (next) => {
       if (store.state.isLogin || store.state.token || localStorage.getItem('token')) {
         next()
       } else {
@@ -62,7 +62,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-router.beforeEach((to, from) => {
+//路由守卫，判断是否显示footermusic组件
+router.beforeEach((to) => {
   if (to.path == '/login') {
     store.state.isFooterMusic = false
   }
