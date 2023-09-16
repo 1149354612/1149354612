@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/infoUser',
     name: 'InfoUser',
-    beforeEnter: (next) => {
+    beforeEnter: (to,from,next) => {
       if (store.state.isLogin || store.state.token || localStorage.getItem('token')) {
         next()
       } else {
@@ -63,7 +63,7 @@ const router = createRouter({
   routes
 })
 //路由守卫，判断是否显示footermusic组件
-router.beforeEach((to) => {
+router.beforeEach((to,from) => {
   if (to.path == '/login') {
     store.state.isFooterMusic = false
   }
