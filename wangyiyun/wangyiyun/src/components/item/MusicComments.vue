@@ -41,7 +41,6 @@ export default {
       const limit = 20;
       const offset = 0;
       const before = null;
-
       getMusicComments(musicId, limit, offset, before)
         .then(response => {
           this.comments = response.data.comments;
